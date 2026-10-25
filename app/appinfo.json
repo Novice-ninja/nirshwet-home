@@ -1,0 +1,18 @@
+{
+  "id": "com.sofagoblin.home",
+  "version": "0.1.6",
+  "vendor": "Personal",
+  "type": "web",
+  "main": "index.html",
+  "title": "Sofa Goblin",
+  "appDescription": "Your five streaming apps. One quiet home.",
+  "icon": "icon.png",
+  "largeIcon": "largeIcon.png",
+  "iconColor": "#abc6b4",
+  "resolution": "1920x1080",
+  "requiredACG": [
+    "application.launcher"
+  ],
+  "disableBackHistoryAPI": true,
+  "handlesRelaunch": false
+}

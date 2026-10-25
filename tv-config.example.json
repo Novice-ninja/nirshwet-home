@@ -1,0 +1,7 @@
+{
+  "host": "192.0.2.10",
+  "port": 22,
+  "username": "root",
+  "privateKey": ".device/tv_root",
+  "knownHostsFile": ".device/root-known-hosts"
+}

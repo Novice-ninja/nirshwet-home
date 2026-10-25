@@ -1,0 +1,5 @@
+#!/bin/sh
+[ -f /var/lib/sofa-goblin/enabled ] || exit 0
+# The lock prevents duplicate watchers. No firmware files or LG apps are replaced.
+nohup flock -n /tmp/sofa-goblin.lock /usr/bin/node /var/lib/sofa-goblin/home-manager.js </dev/null >/tmp/sofa-goblin-errors.log 2>&1 &
+exit 0

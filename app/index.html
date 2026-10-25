@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- Installed webOS apps use file: URLs, which this TV does not match with 'self'. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' file:; style-src 'self' file:; font-src 'self' file:; img-src 'self' file: data:; connect-src 'none'; object-src 'none'; base-uri 'none'">
+  <title>Sofa Goblin</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="home">
+    <header>
+      <div class="brand"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 15 16 6l11 9v12h-8v-8h-6v8H5Z"/></svg><span>Sofa Goblin</span></div>
+      <div class="date-time"><time id="clock"></time><span id="date"></span></div>
+    </header>
+    <div class="photo-space"><div id="photo-background" class="photo-background" aria-hidden="true" hidden><img id="photo-a" alt=""><img id="photo-b" alt=""></div></div>
+    <section class="apps-section" aria-label="Streaming apps">
+      <p id="section-note" hidden></p>
+      <div id="apps" class="app-row"></div>
+      <div class="selection-line"><span id="selected-title">YouTube</span><span id="selection-hint">Press OK to open</span></div>
+    </section>
+    <footer><div class="remote-hint"><span class="key">← →</span> Choose <span class="key">OK</span> Open</div><nav aria-label="Launcher options"><button id="photos" class="utility" data-row="1" hidden>Photos: On</button><button id="arrange" class="utility" data-row="1">Arrange apps</button><button id="remote-guard" class="utility" data-row="1">Remote guard</button><button id="settings" class="utility" data-row="1">TV settings</button><button id="lg-home" class="utility" data-row="1">LG Home <span aria-hidden="true">↗</span></button></nav></footer>
+  </main>
+  <div id="overlay" class="overlay" hidden>
+    <section id="dialog" class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-text">
+      <p class="eyebrow">SOFA GOBLIN</p><h2 id="dialog-title"></h2><p id="dialog-text"></p><div id="dialog-actions" class="dialog-actions"></div>
+    </section>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script src="photos-config.js"></script><script src="platform.js"></script><script src="photos.js"></script><script src="app.js"></script>
+</body>
+</html>

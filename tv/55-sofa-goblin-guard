@@ -1,0 +1,4 @@
+#!/bin/sh
+[ -f /var/lib/sofa-goblin/guard-enabled ] || exit 0
+nohup flock -n /tmp/sofa-goblin-guard.lock /usr/bin/python /var/lib/sofa-goblin/remote_guard.py </dev/null >/tmp/sofa-goblin-guard-errors.log 2>&1 &
+exit 0

@@ -1,0 +1,25 @@
+{
+  "name": "sofa-goblin",
+  "version": "0.1.6",
+  "private": true,
+  "description": "A calm, offline-first LG webOS launcher with optional on-TV Home routing and remote protection",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Novice-ninja/sofa-goblin.git"
+  },
+  "engines": {"node": ">=22"},
+  "scripts": {
+    "dev": "node scripts/preview.mjs",
+    "build": "node scripts/build.mjs",
+    "photos:import": "node scripts/import-photos.mjs",
+    "package": "npm run build && ares-package dist --outdir build",
+    "check": "node --check app/app.js && node --check app/platform.js && node --check app/photos.js && node --check scripts/build.mjs && node --check scripts/import-photos.mjs && node --check tv/luna.js && node --check tv/home-manager.js && node --check scripts/tv-control.mjs && node --check scripts/tv-config.mjs",
+    "test:home": "node --test tests/home-manager.test.cjs",
+    "test:guard": "python3 -m unittest discover -s tests -p 'test_remote_guard.py'",
+    "test": "node --test tests/home-manager.test.cjs tests/tv-config.test.mjs && npm run test:guard"
+  },
+  "devDependencies": {
+    "@webos-tools/cli": "3.2.6"
+  }
+}
